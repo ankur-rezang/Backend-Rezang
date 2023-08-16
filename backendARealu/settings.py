@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-j(f@0wq%u)$9aa4*5%1ucc%8sr1q634)h)kv=2yi4)tmd-6+f9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -137,9 +137,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
 
-TWILIO_ACCOUNT_SID = 'AC8af940150113ee0108f0e8a48a8aac62'
-TWILIO_AUTH_TOKEN = '911d5ac9210466c74c9670d97fd4553d'
-TWILIO_PHONE_NUMBER = '+15398003162'
+from decouple import config
+
+TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID')
+TWILIO_AUTH_TOKEN = config('TWILIO_AUTH_TOKEN')
+TWILIO_PHONE_NUMBER = config('TWILIO_PHONE_NUMBER')
 
 CORS_ALLOW_ALL_ORIGINS = True
 
