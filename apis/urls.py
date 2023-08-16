@@ -8,5 +8,6 @@ urlpatterns = [
     
     path('questions/', QuestionList.as_view(), name='question-list'),
     path('user-response/', UserResponseView.as_view(), name='user-response'),
+
 ]
 
