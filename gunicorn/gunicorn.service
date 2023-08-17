@@ -7,7 +7,7 @@ After=network.target
 User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/project/Backend-Rezang/backendARealu
-ExecStart=/home/ubuntu/project/Backend-Rezang/bin \
+ExecStart=/home/ubuntu/project/Backend-Rezang \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \
